@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+ <style>
+ 
+ 
+  h4{
+      text-align: center;
+ }
+.container {
+width: 100vw;
+height: 100vh;
+background-color:blue;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+background-color:rgb(0, 255, 179);
+}
+.box {
+width:100vw;
+height: 98vh;
+background: rgb(47, 189, 146);
+}
+   .grupoControle{
+    width: 30%;
+   
+    
+}
+  .cam1{
+     width:15%;
+  }
+   .campoNome{
+      width:40%;
+   
+   }
+  .numeroSan{
+     width:5%
+  }
+ </style>
+<head>
+<meta charset="UTF-8">
+<title>Contatos :: Adicionar</title>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<body>
+
+	<div class="container" >
+	  <div class="box"> 
+	         <h4><strong>Dados Da Corrida.</strong></h4>
+		<form action="/salvarFormulario" th:object="${formulario}" method="post">
+			<div>
+			     <label for="data">Data da inscricao</label> <input type="date" class="campo1"
+					th:field="*{dataInscricao}" />
+					
+				 <label for="numeroInscricao">inscricao</label> <input type="number"
+					th:field="*{numeroInscricao}" id="numeroInscricao" placeholder="numero inscricao">
+			</div>
+			  <br>
+			<div class="grupo">
+				<label for="ca">Categorias</label> 
+				<select class="grupoControle" id="ca"
+					th:field="*{ca}">
+					<option th:value="''">Selecione</option>
+					<option th:each="ca : ${T(com.example.demo.CA).values()}" th:text="${ca}" th:value="${ca}"></option>
+				</select>
+				
+			    
+				<label for="sexo" class="escolher">Sexo</label>
+				<input type="checkbox" class="form"
+					th:field="*{sexo}" th:value="Masculino" />
+					<label class="form-check">Masculino</label>
+				<input type="checkbox" class="form-check" th:field="*{sexo}" 
+					th:value="Feminino" />
+					<label class="form-check">Feminino</label>
+				
+			</div>
+			  <br><hr>
+			       <h4><strong>Dados Pessoais.</strong></h4>
+			<div>
+			     <label for="data">Data De Nascimento</label> <input type="date" class="campo3"
+					th:field="*{dataNascimento}" />
+			      
+			     <label for="idade">Idade</label> <input type="number"
+					th:field="*{idade}" id="idade" placeholder="idade"><br/>
+					
+				  <label for="nomes">nome</label> <input type="text" th:field="*{nomes}"
+					class="campoNome" id="nomes" placeholder="nomes"><br/>
+				   <br>
+				  <label for="endereco">endereco</label> <input type="text" th:field="*{endereco}"
+					class="cam1" id="endereco" placeholder="endereco">
+					
+				  <label for="numeroCasa">numeroCasa</label> <input type="number" th:field="*{numeroCasa}"
+					class="numeroSan" id="numeroCasa" placeholder="numeroCasa">
+					
+					<label for="complemento">complemento</label> <input type="text" th:field="*{complemento}"
+					class="cam1" id="complemento" placeholder="complemento"> <br/>
+						
+					
+				 <label for="bairro">bairro</label> <input type="text" th:field="*{bairro}"
+					class="cam" id="bairro" placeholder="bairro">
+					
+				 <label for="cidade">cidade</label> <input type="text" th:field="*{cidade}"
+					class="cam" id="cidade" placeholder="cidade">
+					
+				 <label for="estado">estado</label> <input type="text" th:field="*{estado}"
+					class="cam" id="estado" placeholder="estado"><br/>
+					
+					
+				  <label for="telefone">telefone</label> <input type="number" th:field="*{telefone}"
+					class="cam" id="telefone" placeholder="telefone"> 
+					
+				 <label for="email">email</label> <input type="email" th:field="*{email}" 
+					class="cam" id="email" placeholder="email"><br/>	
+					
+				 <label for="tipoSague">tipo Sanguineo</label> <input type="text" th:field="*{tipoSangue}"
+					class="numeroSan" id="tipoSangue" placeholder="tipo sanguineo">
+					
+					 <label for="convenio">convenio</label> <input type="text" th:field="*{convenio}"
+					class="camp" id="convenio" placeholder="convenio">
+					
+					
+					
+			</div>
+			<div> <hr>
+			    <h4><strong>Termo De Responsabilidade.</strong></h4>
+			    
+			  <label for="nome">Eu</label> <input type="text" th:field="*{nome}"
+					class="camp" id="nome" placeholder="nome">
+					
+			  <label for="rg">Rg</label> <input type="text" th:field="*{rg}"
+					class="camp" id="rg" placeholder="rg">Lorem ipsum dolor sit amet. Id dicta enim quo voluptates laudantium id necessitatibus ullam. Qui officiis unde aut tempore quia et asperiores repellendus. Ut adipisci eius aut maxime quod qui esse dignissimos est officia perspiciatis et sequi iure sit saepe atque aut quaerat autem. Quo libero consequatur eos inventore illum qui totam quibusdam aut architecto sint?
+Aut iusto fugit qui ratione mollitia sit ullam dicta vel libero velit. Qui nisi natus sed autem aspernatur in rerum quae et odio rerum et exercitationem ipsa. Et officia labore rem autem dolor sit placeat officia ut accusamus impedit.
+
+		    </div>
+			
+			<button type="submit" class="btn btn-primary">Enviar</button>
+		</form>
+       </div>
+	</div>
+</body>
+</html>

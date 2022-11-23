@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<Style>
+  .container {
+width: 100vw;
+height: 100vh;
+background: #6C7A89;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+background-color:rgb(0, 255, 179);
+}
+.box {
+width: 80vw;
+height: 12vh;
+background: #fff; 
+text-align:center;
+background: rgb(47, 189, 146);
+border-style: dashed;
+}
+body {
+margin: 0px;
+}
+</Style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <label><strong>Certificamos que o Sr. (a): </strong> </label><span th:text="${nome}"></span><label> <strong>está devidamente incrito da XVII CORRIDA DO DIVINO ESPIRITO SANTO ANO 2019 sob o n de incricao :</strong></label>
+           <span th:text="${numeroInscricao}"></span><label><strong>na Categoria :</strong></label>
+     <span th:text="${ca}"></span>
+      </div>
+  </div>
+</body>
+</html>
